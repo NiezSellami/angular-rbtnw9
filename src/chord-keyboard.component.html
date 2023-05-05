@@ -1,0 +1,13 @@
+<div class="chord-keyboard-container">
+  <div class="chord-rows">
+    <div class="chord-row" *ngFor="let row of chordRows">
+      <button
+        class="chord-key"
+        *ngFor="let chord of row"
+        (click)="onChordClick(chord)"
+      >
+        {{ chord }}
+      </button>
+    </div>
+  </div>
+</div>

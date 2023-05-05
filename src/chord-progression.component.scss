@@ -1,0 +1,78 @@
+.progression-container {
+  font-family: 'Arial', sans-serif;
+  max-width: 100%; // Ajoutez cette ligne
+  overflow-x: auto; // Ajoutez cette ligne
+}
+
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 8px 16px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.progression {
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  min-width: 320px; // Ajoutez cette ligne
+}
+
+.measure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #ccc;
+  padding: 8px;
+  width: 100px;
+  min-width: 100px; // Ajoutez cette ligne
+  box-sizing: border-box;
+}
+
+.measure:last-child {
+  border-right: none;
+}
+
+.measure-number {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.chords {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+}
+
+.chord {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  position: relative;
+}
+
+.chord-symbol {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.chord-bar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-right: 1px solid #ccc;
+}
+
+.chord:last-child .chord-bar {
+  display: none;
+}

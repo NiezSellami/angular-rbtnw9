@@ -1,0 +1,18 @@
+<div class="progression-container">
+  <div class="title-bar">
+    <div class="song-title">My Song</div>
+    <div class="song-info">C Major - 4/4</div>
+  </div>
+  <div class="progression">
+    <div class="measure" *ngFor="let measure of measures; let i = index">
+      <div class="chord" *ngFor="let chord of measure">
+        {{ chord }}
+      </div>
+      <div class="measure-number">{{ i + 1 }}</div>
+    </div>
+  </div>
+
+  <app-chord-keyboard
+    (chordClicked)="onChordClicked($event)"
+  ></app-chord-keyboard>
+</div>

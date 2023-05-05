@@ -9,10 +9,7 @@ import { ChordKeyboardComponent } from './chord-keyboard.component';
   templateUrl: './chord-progression.component.html',
   styleUrls: ['./chord-progression.component.scss'],
 })
-export class ChordProgressionComponent implements OnInit {
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+export class ChordProgressionComponent {
   measures: string[][] = [];
   activeMeasureIndex: number = 0;
 
@@ -39,5 +36,13 @@ export class ChordProgressionComponent implements OnInit {
       // Remplacez 4 par le nombre d'accords maximum par mesure
       this.activeMeasureIndex++;
     }
+  }
+  onNextMeasureClicked() {
+    console.log('Next measure clicked');
+    this.moveToNextMeasure();
+  }
+
+  moveToNextMeasure() {
+    this.activeMeasureIndex++;
   }
 }

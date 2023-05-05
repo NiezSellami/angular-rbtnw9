@@ -10,14 +10,20 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class ChordKeyboardComponent {
   @Output() chordClicked = new EventEmitter<string>();
+  @Output() nextMeasureClicked = new EventEmitter<void>();
 
   chordRows: string[][] = [
-    ['Cmaj7', 'Dm7', 'Em7', 'Fmaj7', 'G7', 'Am7', 'Bm7b5'],
+    ['Cmaj7', 'Dm7', 'Em7', 'Fmaj7', 'G7', 'Am7', 'Bm7b5', '➡️'],
     // Ajoutez d'autres lignes si nécessaire
   ];
 
   onChordClick(chord: string) {
     console.log('Chord clicked:', chord);
     this.chordClicked.emit(chord);
+  }
+
+  onNextMeasureClick() {
+    console.log('Next measure clicked');
+    this.nextMeasureClicked.emit();
   }
 }

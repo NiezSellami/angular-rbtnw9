@@ -1,13 +1,18 @@
 <div class="chord-keyboard-container">
   <div class="chord-rows">
-    <div class="chord-row" *ngFor="let row of chordRows">
-      <button
-        class="chord-key"
-        *ngFor="let chord of row"
-        (click)="onChordClick(chord)"
-      >
-        {{ chord }}
-      </button>
-    </div>
+    <ng-container *ngFor="let row of chordRows">
+      <div class="chord-row">
+        <ng-container *ngFor="let chord of row">
+          <div
+            class="chord-key"
+            (click)="
+              chord !== '➡️' ? onChordClick(chord) : onNextMeasureClick()
+            "
+          >
+            {{ chord }}
+          </div>
+        </ng-container>
+      </div>
+    </ng-container>
   </div>
 </div>
